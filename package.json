@@ -21,7 +21,6 @@
     "deploy": "yarn clean && yarn build-bundle && git add dist/ && git commit -m \"Build + package for release.\" && yarn version --patch && git push origin --tags HEAD"
   },
   "dependencies": {
-    "@avcs/autosuggest": "^1.7.5",
     "@floip/expression-evaluator": "^2.1.0",
     "@floip/flow-runner": "https://github.com/FLOIP/flow-runner.git#feature/VMO-4281-flow-spec-rc2",
     "@flowjs/flow.js": "^2.13.0",
@@ -29,6 +28,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/vue-fontawesome": "^2.0.2",
+    "@trevoreyre/autocomplete-vue": "^2.2.0",
     "@types/json-schema": "^7.0.7",
     "@types/lodash": "^4.14.157",
     "@types/uuid": "^8.0.0",

@@ -5,7 +5,6 @@
       label=""
       :placeholder="'flow-builder.advanced-exit-expression-placeholder' | trans"
       :current-expression="test"
-      :rows="1"
       :prepend-text="label"
       @commitExpressionChange="commitExpressionChange" />
 

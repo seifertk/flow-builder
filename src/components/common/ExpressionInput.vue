@@ -11,21 +11,21 @@
         <span class="input-group-text">{{ prependText }}</span>
       </div>
 
-      <textarea
-        ref="input"
-        v-model="expression"
-        :class="['form-control', {'is-invalid': isInvalid}]"
-        :rows="rows"
+      <autocomplete
+        :search="search"
+        :default-value="expression"
         :placeholder="placeholder"
-        @input="$emit('input', $event.target.value)" />
+        :aria-label="placeholder"
+        :base-class="['form-control', {'is-invalid': isInvalid}]"
+        @submit="submit" />
     </div>
     <slot />
   </div>
 </template>
 
 <script>
-import AutoSuggest from '@avcs/autosuggest'
-import '@avcs/autosuggest/dropdown.css'
+import Autocomplete from '@trevoreyre/autocomplete-vue'
+import '@trevoreyre/autocomplete-vue/dist/style.css'
 import {mapGetters} from 'vuex'
 import {MethodNodeEvaluatorFactory} from '@floip/expression-evaluator/dist/Evaluator/NodeEvaluator/MethodNodeEvaluator/Factory'
 import Lang from 'lib/filters/lang'
@@ -42,6 +42,9 @@ const defaultDateFields = [
 ]
 
 export default {
+  components: {
+    Autocomplete,
+  },
   mixins: [Lang],
 
   props: {
@@ -65,11 +68,6 @@ export default {
     expressionIdentifier: {
       type: [String, Number],
       default: null,
-    },
-    rows: {
-      type: Number,
-      required: false,
-      default: 1,
     },
     validState: {
       type: Boolean,
@@ -179,13 +177,17 @@ export default {
     },
   },
 
-  mounted() {
-    const input = this.$refs.input
-    this.suggest = new AutoSuggest({
-      caseSensitive: false,
-      suggestions: this.suggestions,
-      onChange: () => input.dispatchEvent(new Event('input')),
-    }, input)
+  methods: {
+    search(input) {
+      if (input.length < 1) {
+        return []
+      } else {
+        return this.suggestions.filter((suggestion) => suggestion.toLowerCase().includes(input.toLowerCase()))
+      }
+    },
+    submit(event) {
+      this.expression = event.target.value
+    },
   },
 }
 </script>
