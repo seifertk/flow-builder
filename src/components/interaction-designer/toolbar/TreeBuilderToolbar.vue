@@ -40,7 +40,7 @@
               <button
                 class="btn btn-outline-primary btn-sm"
                 @click="showOrHideEditFlowModal">
-                {{ 'flow-builder.edit-flow' | trans }}
+                {{ 'flow-builder.flow-details' | trans }}
               </button>
               <b-modal
                 ref="edit-flow-modal"
@@ -49,7 +49,7 @@
                 @ok="showOrHideEditFlowModal">
                 <template slot="modal-header">
                   <h2 class="mb-0">
-                    {{ 'flow-builder.edit-flow' | trans }}
+                    {{ 'flow-builder.flow-details' | trans }}
                   </h2>
                   <button
                     type="button"

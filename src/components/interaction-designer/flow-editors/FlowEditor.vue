@@ -75,7 +75,7 @@ const validationVuexNamespace = namespace('validation')
 })
 class FlowEditor extends mixins(Lang) {
   @Prop() readonly flow!: IFlow
-  @Prop({default: 'flow-builder.edit-flow'}) readonly flowHeader!: string
+  @Prop({default: 'flow-builder.flow-details'}) readonly flowHeader!: string
   @Prop({default: true}) readonly sidebar!: boolean
 
   async updateFlowLanguages(value: ILanguage[] | ILanguage): Promise<void> {
