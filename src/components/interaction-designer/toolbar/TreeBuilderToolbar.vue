@@ -150,9 +150,6 @@
                 role="button"
                 aria-haspopup="true"
                 aria-expanded="false">
-                <font-awesome-icon
-                  :icon="['fac', 'content']"
-                  class="fa-btn big-icon" />
                 <span class="nav-link-text">{{ 'flow-builder.content' | trans }}</span>
               </a>
               <div class="dropdown-menu mt-0">
@@ -184,9 +181,6 @@
                 role="button"
                 aria-haspopup="true"
                 aria-expanded="false">
-                <font-awesome-icon
-                  :icon="['fac', 'contact']"
-                  class="fa-btn big-icon" />
                 <span class="nav-link-text">{{ 'flow-builder.contact' | trans }}</span>
               </a>
               <div class="dropdown-menu mt-0">
@@ -218,9 +212,6 @@
                 role="button"
                 aria-haspopup="true"
                 aria-expanded="false">
-                <font-awesome-icon
-                  :icon="['fac', 'branching']"
-                  class="fa-btn big-icon" />
                 <span class="nav-link-text">{{ 'flow-builder.branching' | trans }}</span>
               </a>
               <div class="dropdown-menu mt-0">
@@ -253,9 +244,6 @@
                 role="button"
                 aria-haspopup="true"
                 aria-expanded="false">
-                <font-awesome-icon
-                  :icon="['fac', 'weather']"
-                  class="fa-btn big-icon" />
                 <span class="nav-link-text">{{ 'flow-builder.weather' | trans }}</span>
               </a>
               <div class="dropdown-menu mt-0">
@@ -287,9 +275,6 @@
                 role="button"
                 aria-haspopup="true"
                 aria-expanded="false">
-                <font-awesome-icon
-                  :icon="['fac', 'developer']"
-                  class="fa-btn big-icon" />
                 <span class="nav-link-text">{{ 'flow-builder.developer' | trans }}</span>
               </a>
               <div class="dropdown-menu mt-0">
@@ -707,6 +692,8 @@ export default class TreeBuilderToolbar extends mixins(Routes, Permissions, Lang
 }
 
 .tree-workspace-panel-heading-contents .nav .nav-item a {
+  display: flex;
+  align-items: center;
   color: black;
 }
 
