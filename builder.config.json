@@ -343,7 +343,8 @@
       "OFFLINE"
     ],
     "toolbar": {
-      "flowTitle": true
+      "flowTitle": true,
+      "newFlowButton": true
     },
     "defaultModes": [
       "SMS",
